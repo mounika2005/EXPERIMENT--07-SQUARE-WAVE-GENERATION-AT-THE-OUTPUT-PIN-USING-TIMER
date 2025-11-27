@@ -1,6 +1,6 @@
 # EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER
-
-
+## NAME : Levaku Lakshmi Mounika
+## REGISTRATION NUMBER :212223100026
 ### Aim:
 To generate a PWM wave at the timer pin output and  simuate it on  proteus using an virtual oscilloscope  
 
@@ -97,6 +97,7 @@ Step14. click on debug and simulate using simulation as shown below
   
 
 ## STM 32 CUBE PROGRAM :
+
 ```
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -178,7 +179,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 500;
+  sConfigOC.Pulse = 900;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -213,48 +214,57 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif 
 
 ```
-## Output screen shots of proteus  :
-## PULSE - 500 
-![WhatsApp Image 2025-10-24 at 08 59 48_44b43446](https://github.com/user-attachments/assets/bd9d5c94-795c-4652-9296-10ddbeb39ff3)
-## PULSE - 700 
-![WhatsApp Image 2025-10-24 at 09 01 44_395051ea](https://github.com/user-attachments/assets/71cd4d21-28a2-4b12-a6ba-9e7f43b74f52)
-## PULSE - 900
-![WhatsApp Image 2025-10-24 at 09 05 59_6bd7e8d9](https://github.com/user-attachments/assets/9140e9a4-fe91-4000-b6fc-fded1daf0d7d)
 
-## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
+
+
+## Output screen shots of proteus  :
+
+<img width="1920" height="1080" alt="Screenshot (21)" src="https://github.com/user-attachments/assets/77008701-2fe7-46a3-8955-67569c8eef87" />
+
+<img width="1920" height="1080" alt="Screenshot (22)" src="https://github.com/user-attachments/assets/9f47a3bc-5fe7-4379-94f0-85a5a8b49e8b" />
+
+<img width="1920" height="1080" alt="Screenshot (23)" src="https://github.com/user-attachments/assets/b63a8801-8cab-4732-8aba-297c922170d8" />
+
+ ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
  
+<img width="1213" height="849" alt="image" src="https://github.com/user-attachments/assets/42fb4794-67e7-4e85-8123-9d9b976523ee" />
+
+
 
 ## DUTY CYCLE AND FREQUENCY CALCULATION 
 FOR PULSE AT 500
 
-TON = 30ms
+TON = 32ms 
 
-TOFF= 8 ms
+TOFF = 8ms
 
-TOTAL TIME = 30ms+8ms = 38ms
+TOTAL TIME = 32ms + 8ms = 40ms
 
-FREQUENCY = 1/38ms = 0.026mhz = 26hz
+FREQUENCY = 1/(TOTAL TIME) = 1/40 = 25HZ
+
 
 FOR PULSE AT 700
 
 TON = 44ms
 
-TOFF= 4.5ms
+TOFF= 5ms
 
-TOTAL TIME =  44ms+4.5ms = 48.5ms
+TOTAL TIME = 44ms + 5ms= 49
 
-FREQUENCY = 1/48.5ms = 0.20mhz = 20hz
+FREQUENCY = 1/(TOTAL TIME) = 1/49 = 20HZ
+
 
 
 FOR PULSE AT 900
 
-TON = 56ms
+TON = 54ms
 
 TOFF= 2ms
 
-TOTAL TIME =  56ms+2ms = 58ms
+TOTAL TIME = 54ms + 2ms = 56
 
-FREQUENCY = 1/58ms = 0.017mhz = 17hz
+FREQUENCY = 1/(TOTAL TIME) = 1/56 =17HZ
+
 
 
 ## Result :
